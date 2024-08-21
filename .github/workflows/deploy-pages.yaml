@@ -2,7 +2,7 @@ name: Deploy GitHub Pages
 
 on:
   release:
-    types: [published]
+    types: [created]
 
 jobs:
   build-and-deploy:
@@ -20,4 +20,4 @@ jobs:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         publish_dir: ./  # Adjust this to your build output directory
         publish_branch: main  # The branch to publish to
-        destination_dir: ${{ github.event.release.tag_name }}  
+        destination_dir: /  # Use the root directory
