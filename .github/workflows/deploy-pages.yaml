@@ -15,5 +15,5 @@ jobs:
       with:
         github_token: ${{ secrets.TOKEN }}
         publish_dir: ./  # Adjust this to your build output directory
-        publish_branch: main  # The branch to publish to
+        publish_branch: branch1  # The branch to publish to
         destination_dir: ${{ github.event.workflow_run.head_commit.id }}  # Use the root directory
