@@ -17,7 +17,7 @@ jobs:
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v4
       with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
+        github_token: ${{ secrets.TOKEN }}
         publish_dir: ./  # Adjust this to your build output directory
         publish_branch: main  # The branch to publish to
         destination_dir: /  # Use the root directory
