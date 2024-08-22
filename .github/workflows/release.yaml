@@ -17,8 +17,10 @@ jobs:
         id: create_release
         uses: ncipollo/release-action@v1
         with:
-          tag: ${{ github.ref }}
-          name: Release ${{ github.ref }}
+          tag: false
+          name: false
+          # tag: ${{ github.ref }}
+          # name: Release ${{ github.ref }}
           token: ${{ secrets.GITHUB_TOKEN }} # This token is provided by Actions, you do not need to create your own token
           body: |
             Changes in this Release
