@@ -3,6 +3,11 @@ on:
     workflows: ["Create Release"]
     types: [completed]
 name: Deploy Pages workflow
+
+permissions:
+  id-token: write
+  contents: read
+
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
