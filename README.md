@@ -8,7 +8,7 @@ readme3
 readme4
 readme5
 readme now !!
-feature-pages
+feature-page
 
 
 name: Deploy GitHub Pages
