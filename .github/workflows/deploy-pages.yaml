@@ -1,0 +1,19 @@
+on:
+  workflow_run:
+    workflows: ["Create Release"]
+    types: [completed]
+name: Deploy GitHub Pages workflow
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+    # Add any other setup steps required by your project here
+    - name: Deploy to GitHub Pages
+      uses: peaceiris/actions-gh-pages@v4
+      with:
+        github_token: ${{ secrets.TOKEN }}
+        publish_dir: ./  # Adjust this to your build output directory
+        publish_branch: main  # The branch to publish to
+        destination_dir: ${{ github.event.release.tag_name }}  # Use the root directory
