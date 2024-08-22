@@ -1,8 +1,9 @@
-name: Deploy GitHub Pages
-
 on:
-  release:
-    types: [created]
+  workflow_run:
+    workflows: ["Create Release"]
+    types: [completed]
+
+name: Deploy GitHub Pages workflow
 
 jobs:
   build-and-deploy:
@@ -20,4 +21,4 @@ jobs:
         github_token: ${{ secrets.TOKEN }}
         publish_dir: ./  # Adjust this to your build output directory
         publish_branch: main  # The branch to publish to
-        destination_dir: ${{ github.event.release.tag_name }}  # Use the root directory
+        destination_dir: /  # Use the root directory
