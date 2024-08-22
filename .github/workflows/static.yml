@@ -1,0 +1,22 @@
+on:
+  workflow_run:
+    workflows: ["Create Release"]
+    types: [completed]
+name: Deploy GitHub Pages workflow
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+    # Add any other setup steps required by your project here
+    - name: Upload artifact
+      uses: actions/upload-pages-artifact@v3
+      with:
+        # Upload entire repository
+        path: '.'
+    - name: Deploy to GitHub Pages
+      id: deployment
+      uses: actions/deploy-pages@v4
+      with:
+        artifact_name: /docs
