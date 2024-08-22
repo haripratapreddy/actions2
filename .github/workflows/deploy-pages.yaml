@@ -10,10 +10,14 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v4
     # Add any other setup steps required by your project here
-    - name: Deploy to GitHub Pages
-      uses: peaceiris/actions-gh-pages@v4
-      with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: docs  # Adjust this to your build output directory
-        # publish_branch: branch1  # The branch to publish to
-        # destination_dir: ${{ github.event.workflow_run.head_commit.id }}  # Use the root directory
+    - name: Deploy
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          folder: docs # The folder the action should deploy.
+    # - name: Deploy to GitHub Pages
+    #   uses: peaceiris/actions-gh-pages@v4
+    #   with:
+    #     github_token: ${{ secrets.GITHUB_TOKEN }}
+    #     publish_dir: docs  # Adjust this to your build output directory
+    #     # publish_branch: branch1  # The branch to publish to
+    #     # destination_dir: ${{ github.event.workflow_run.head_commit.id }}  # Use the root directory
