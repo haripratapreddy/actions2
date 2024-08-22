@@ -2,7 +2,7 @@ on:
   workflow_run:
     workflows: ["Create Release"]
     types: [completed]
-name: Deploy GitHub Pages workflow
+name: Deploy Pages workflow
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
