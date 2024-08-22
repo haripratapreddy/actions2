@@ -15,7 +15,6 @@ name: Deploy GitHub Pages
 on:
   release:
     types: [published]
-
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
