@@ -11,9 +11,13 @@ jobs:
       uses: actions/checkout@v4
     # Add any other setup steps required by your project here
     - name: Deploy
-      uses: JamesIves/github-pages-deploy-action@v4
+      uses: actions/deploy-pages@v4
       with:
-        folder: docs # The folder the action should deploy.
+        token: ${{ secrets.GITHUB_TOKEN }}
+        artifact_name: github-pages
+      # uses: JamesIves/github-pages-deploy-action@v4
+      # with:
+      #   folder: docs # The folder the action should deploy.
     # - name: Deploy to GitHub Pages
     #   uses: peaceiris/actions-gh-pages@v4
     #   with:
